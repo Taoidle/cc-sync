@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "mcp",
+            "server": "cc-sync",
+            "tool": "pull",
+            "once": true
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "shutdown",
+        "hooks": [
+          {
+            "type": "mcp",
+            "server": "cc-sync",
+            "tool": "push"
+          }
+        ]
+      }
+    ]
+  }
+}
