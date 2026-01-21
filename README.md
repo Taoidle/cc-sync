@@ -10,13 +10,13 @@ Claude Code plugin marketplace for syncing Claude Code configuration files using
 
 ```bash
 # Add marketplace
-/plugin marketplace add <your-username>/cc-sync
+/plugin marketplace add Taoidle/cc-sync
 
 # Install plugin
-/plugin install cc-sync@<your-username>/cc-sync
+/plugin install cc-sync@Taoidle/cc-sync
 
 # Or install at user scope (available for all projects)
-/plugin install cc-sync@<your-username>/cc-sync --scope user
+/plugin install cc-sync@Taoidle/cc-sync --scope user
 ```
 
 ### Method 2: Install from Local Directory (Development)
@@ -55,10 +55,10 @@ mkdir -p ./.claude-plugins/cc-sync
 
 ```bash
 # Install directly from GitHub repository
-claude plugin install <your-username>/cc-sync
+claude plugin install Taoidle/cc-sync
 
 # Or specify a branch
-claude plugin install <your-username>/cc-sync#main
+claude plugin install Taoidle/cc-sync#main
 ```
 
 ## Plugin Features
@@ -101,7 +101,7 @@ claude plugin install <your-username>/cc-sync#main
 
 ```bash
 cd ~/claude-config-sync
-git remote add origin https://github.com/<your-username>/claude-configs.git
+git remote add origin https://github.com/Taoidle/claude-configs.git
 git push -u origin main
 ```
 
@@ -180,8 +180,8 @@ To publish this marketplace:
 1. Push `cc-sync` to GitHub
 2. Users install with:
    ```bash
-   /plugin marketplace add <your-username>/cc-sync
-   /plugin install cc-sync@<your->/cc-sync
+   /plugin marketplace add Taoidle/cc-sync
+   /plugin install cc-sync@Taoidle/cc-sync
    ```
 
 ## License

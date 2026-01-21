@@ -10,13 +10,13 @@ Claude Code 插件市场，用于使用 Git 同步 Claude Code 配置文件，�
 
 ```bash
 # 添加 marketplace
-/plugin marketplace add <your-username>/cc-sync
+/plugin marketplace add Taoidle/cc-sync
 
 # 安装插件
-/plugin install cc-sync@<your-username>/cc-sync
+/plugin install cc-sync@Taoidle/cc-sync
 
 # 或者安装到用户级别（所有项目可用）
-/plugin install cc-sync@<your-username>/cc-sync --scope user
+/plugin install cc-sync@Taoidle/cc-sync --scope user
 ```
 
 ### 方式 2: 直接从本地安装
@@ -58,10 +58,10 @@ mkdir -p ./.claude-plugins/cc-sync
 
 ```bash
 # 直接从 GitHub 仓库安装
-claude plugin install <your-username>/cc-sync
+claude plugin install Taoidle/cc-sync
 
 # 或指定分支
-claude plugin install <your-username>/cc-sync#main
+claude plugin install Taoidle/cc-sync#main
 ```
 
 ## 插件功能
@@ -104,7 +104,7 @@ claude plugin install <your-username>/cc-sync#main
 
 ```bash
 cd ~/claude-config-sync
-git remote add origin https://github.com/<your-username>/claude-configs.git
+git remote add origin https://github.com/Taoidle/claude-configs.git
 git push -u origin main
 ```
 
@@ -185,8 +185,8 @@ cc-sync/
 1. 将 `cc-sync` 推送到 GitHub
 2. 用户安装方式：
    ```bash
-   /plugin marketplace add <your-username>/cc-sync
-   /plugin install cc-sync@<your-username>/cc-sync
+   /plugin marketplace add Taoidle/cc-sync
+   /plugin install cc-sync@Taoidle/cc-sync
    ```
 
 ## 许可证
