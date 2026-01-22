@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Marketplace for cc-sync plugin - Claude Code configuration synchronization with Git LFS support",
-    "version": "1.0.1"
+    "version": "1.0.2"
   },
   "plugins": [
     {
       "name": "cc-sync",
       "source": "./plugins/cc-sync",
       "description": "Sync Claude Code configurations using Git with LFS and custom mode support",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "category": "productivity"
     }
   ]
