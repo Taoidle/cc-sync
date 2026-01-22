@@ -1,6 +1,6 @@
 {
   "name": "cc-sync",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "使用 Git 同步 Claude Code 配置文件，支持 Git LFS 和自定义同步模式 - Sync Claude Code configurations using Git with LFS and custom mode support",
   "author": {
     "name": "cc-sync",
