@@ -1,23 +1,35 @@
 ---
 description: 添加文件或目录到自定义同步列表 - Add file or directory to custom sync list
+argument-hint: path=<path> type=<file|dir> [optional=true|false] [useLFS=true|false]
+allowed-tools: []
 ---
 
 # 添加自定义同步项 (Add Custom Item)
 
-使用 MCP Server 的 `addCustomItem` 工具向自定义同步列表添加文件或目录。
+使用 cc-sync MCP 服务器的 `addCustomItem` 工具向自定义同步列表添加文件或目录。
 
-**注意**: 只有在自定义模式 (custom mode) 下才能管理自定义同步项。
+**注意**：只有在自定义模式下才能管理自定义同步项。
 
-## 参数 (Parameters)
+## 执行步骤
 
-- `path` (必需): 相对于 `~/.claude/` 的路径，例如 `plugins`、`cache/sessions`
-- `type` (必需): 项目类型
-  - `file`: 文件
-  - `dir`: 目录
-- `optional` (可选): 是否为可选项目（默认：false）
-- `useLFS` (可选): 是否为此项目使用 Git LFS（推荐用于大文件，默认：false）
+1. 解析参数：
+   - `path`（必需）：相对于 `~/.claude/` 的路径
+   - `type`（必需）：`file` 或 `dir`
+   - `optional`（可选）：是否为可选项目
+   - `useLFS`（可选）：是否使用 Git LFS
 
-## 使用示例 (Examples)
+2. 调用 cc-sync MCP 服务器的 `addCustomItem` 工具，传递解析的参数
+
+3. 显示返回的结果
+
+## 参数
+
+- `path`（必需）：路径，如 `plugins`、`cache/sessions`
+- `type`（必需）：`file` 或 `dir`
+- `optional`（可选）：是否为可选项目（默认：false）
+- `useLFS`（可选）：是否使用 Git LFS（默认：false）
+
+## 示例
 
 ```
 # 添加插件目录
@@ -33,42 +45,30 @@ description: 添加文件或目录到自定义同步列表 - Add file or directo
 /cc-sync:addCustomItem path=sessions type=dir optional=true useLFS=true
 ```
 
-## 自定义模式说明
-
-首先切换到自定义模式：
-```
-/cc-sync:setMode mode=custom
-```
-
-然后添加你想要同步的项目：
-```
-# 添加基本配置
-/cc-sync:addCustomItem path=settings.json type=file
-/cc-sync:addCustomItem path=.claude.json type=file
-
-# 添加插件
-/cc-sync:addCustomItem path=plugins type=dir
-/cc-sync:addCustomItem path=agents type=dir
-
-# 添加缓存（使用 LFS）
-/cc-sync:addCustomItem path=cache type=dir useLFS=true
-/cc-sync:addCustomItem path=sessions type=dir useLFS=true
-```
-
 ---
 
 Use the `addCustomItem` tool from the cc-sync MCP Server to add files or directories to the custom sync list.
 
 **Note**: Custom items can only be managed in custom mode.
 
+## Instructions
+
+1. Parse parameters:
+   - `path` (required): path relative to `~/.claude/`
+   - `type` (required): `file` or `dir`
+   - `optional` (optional): whether this item is optional
+   - `useLFS` (optional): whether to use Git LFS
+
+2. Call the `addCustomItem` tool from the cc-sync MCP Server with the parsed parameters
+
+3. Display the result
+
 ## Parameters
 
-- `path` (required): Path relative to `~/.claude/`, e.g., `plugins`, `cache/sessions`
-- `type` (required): Item type
-  - `file`: File
-  - `dir`: Directory
-- `optional` (optional): Whether this item is optional (default: false)
-- `useLFS` (optional): Use Git LFS for this item (recommended for large files, default: false)
+- `path` (required): path like `plugins`, `cache/sessions`
+- `type` (required): `file` or `dir`
+- `optional` (optional): whether this item is optional (default: false)
+- `useLFS` (optional): whether to use Git LFS (default: false)
 
 ## Examples
 
@@ -84,26 +84,4 @@ Use the `addCustomItem` tool from the cc-sync MCP Server to add files or directo
 
 # Add optional sessions directory
 /cc-sync:addCustomItem path=sessions type=dir optional=true useLFS=true
-```
-
-## Custom Mode Setup
-
-First switch to custom mode:
-```
-/cc-sync:setMode mode=custom
-```
-
-Then add items you want to sync:
-```
-# Add basic configs
-/cc-sync:addCustomItem path=settings.json type=file
-/cc-sync:addCustomItem path=.claude.json type=file
-
-# Add plugins
-/cc-sync:addCustomItem path=plugins type=dir
-/cc-sync:addCustomItem path=agents type=dir
-
-# Add cache (using LFS)
-/cc-sync:addCustomItem path=cache type=dir useLFS=true
-/cc-sync:addCustomItem path=sessions type=dir useLFS=true
 ```
